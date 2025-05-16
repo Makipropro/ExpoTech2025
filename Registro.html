@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro - ExpoTech 2025</title>
+  <link rel="stylesheet" href="StyleRegistro.css" />
+</head>
+<body>
+
+  <header>
+    <h1 class="spanish-text">Registro - ExpoTech 2025</h1>
+    <h1 class="english-text" style="display:none;">Registration - ExpoTech 2025</h1>
+    <div class="container">
+      <nav>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul class="menu">
+          <li><a href="index.html" class="spanish-text">Inicio</a><a href="index.html" class="english-text" style="display:none;">Home</a></li>
+          <li><a href="actividades.html" class="spanish-text">Actividades</a><a href="actividades.html" class="english-text" style="display:none;">Activities</a></li>
+          <li><a href="expositores.html" class="spanish-text">Expositores</a><a href="expositores.html" class="english-text" style="display:none;">Exhibitors</a></li>
+          <li><a href="preguntasfrecuentes.html" class="spanish-text">Preguntas</a><a href="preguntasfrecuentes.html" class="english-text" style="display:none;">Questions</a></li>
+          <li><a href="registro.html" class="spanish-text">Registro</a><a href="registro.html" class="english-text" style="display:none;">Registration</a></li>
+          <li><a href="contacto.html" class="spanish-text">Contacto</a><a href="contacto.html" class="english-text" style="display:none;">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="toggle-btns">
+        <button id="lang-toggle" onclick="toggleLanguage()">ES/EN</button>
+        <button id="darkmode-toggle" onclick="toggleDarkMode()">🌙/☀️</button>
+      </div>
+
+      <div class="tarjeta">
+        <h2 class="spanish-text">Formulario de Inscripción</h2>
+        <h2 class="english-text" style="display:none;">Registration Form</h2>
+
+        <form id="registroForm" class="contact-form" novalidate>
+          <!-- Nombre Completo -->
+          <label for="nombre" class="spanish-text">Nombre completo:</label>
+          <label for="nombre" class="english-text" style="display:none;">Full Name:</label>
+          <input type="text" id="nombre" name="nombre" required />
+
+          <!-- Correo Electrónico -->
+          <label for="correo" class="spanish-text">Correo electrónico:</label>
+          <label for="correo" class="english-text" style="display:none;">Email:</label>
+          <input type="email" id="correo" name="correo" required />
+
+          <!-- Carrera o Profesión -->
+          <label for="carrera" class="spanish-text">Carrera o profesión:</label>
+          <label for="carrera" class="english-text" style="display:none;">Career or Profession:</label>
+          <input type="text" id="carrera" name="carrera" required />
+
+          <!-- Intereses -->
+          <fieldset>
+            <legend class="spanish-text">Intereses:</legend>
+            <legend class="english-text" style="display:none;">Interests:</legend>
+            <label><input type="checkbox" name="intereses" value="robotica" /> <span class="spanish-text">Robótica</span><span class="english-text" style="display:none;">Robotics</span></label><br/>
+            <label><input type="checkbox" name="intereses" value="ia" /> <span class="spanish-text">IA</span><span class="english-text" style="display:none;">AI</span></label><br/>
+            <label><input type="checkbox" name="intereses" value="apps" /> <span class="spanish-text">Apps</span><span class="english-text" style="display:none;">Apps</span></label><br/>
+            <label><input type="checkbox" name="intereses" value="videojuegos" /> <span class="spanish-text">Videojuegos</span><span class="english-text" style="display:none;">Video Games</span></label>
+            <div id="errorIntereses" class="error-message" style="display:none;">
+              <span class="spanish-text">Por favor, selecciona al menos un interés.</span>
+              <span class="english-text" style="display:none;">Please select at least one interest.</span>
+            </div>
+          </fieldset>
+
+          <!-- Mensaje de éxito -->
+          <div id="mensajeExito" class="mensaje-exito">
+            <span class="spanish-text">✅ ¡Inscripción exitosa!</span>
+            <span class="english-text" style="display:none;">✅ Registration successful!</span>
+          </div>
+
+          <button type="submit" class="spanish-text">Enviar</button>
+          <button type="submit" class="english-text" style="display:none;">Submit</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 ExpoTech | Todos los derechos reservados</p>
+    <div class="contact-info">
+      <p><strong class="spanish-text">Contacto:</strong><strong class="english-text" style="display:none;">Contact:</strong></p>
+      <p class="spanish-text">Teléfono: 📞 +1 234 567 890</p>
+      <p class="english-text" style="display:none;">Phone: 📞 +1 234 567 890</p>
+      <p class="spanish-text">Correo: 📧 contacto@expotech2025.com</p>
+      <p class="english-text" style="display:none;">Email: 📧 contacto@expotech2025.com</p>
+      <p class="spanish-text">WhatsApp: 💬 +1 234 567 890</p>
+      <p class="english-text" style="display:none;">WhatsApp: 💬 +1 234 567 890</p>
+    </div>
+  </footer>
+
+  <script src="ScriptRegistro.js"></script>
+</body>
+</html>
+

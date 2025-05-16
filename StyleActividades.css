@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0a23;
+    background-image: radial-gradient(circle at 1px 1px, #1f1f3a 1px, transparent 0);
+    background-size: 20px 20px;
+    color: #f1f1f1;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #14213d;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+nav {
+    position: relative;
+    width: 100%;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #f1f1f1;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.menu li a:hover {
+    background-color: #0077b6;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        display: none;
+        background-color: #14213d;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 60px;
+        padding: 10px 0;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Main content */
+main {
+    padding: 40px 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Espacio entre la barra de búsqueda y los botones */
+.search-bar {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px; /* Espacio debajo de la barra de búsqueda */
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #1a1a40;
+    color: #fff;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #0077b6;
+}
+
+.toggle-btns {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px; /* Espacio debajo de los botones */
+}
+
+/* Separar los botones de la barra de búsqueda y las tarjetas */
+button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #0077b6;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 5px; /* Espacio entre los botones */
+}
+
+button:hover {
+    background-color: #023e8a;
+}
+
+/* Actividades */
+/* Espacio entre las tarjetas de actividades */
+.actividades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 40px; /* Espacio entre los botones y las tarjetas */
+}
+
+.tarjeta {
+    background-color: #1a1a40;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(28, 76, 99, 0.8);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(28, 76, 99, 1);
+}
+
+.tarjeta img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.tarjeta h2 {
+    margin: 10px 0;
+    font-size: 1.4em;
+    color: #90e0ef;
+}
+
+/* Footer */
+footer {
+    background-color: #14213d;
+    padding: 25px 0;
+    text-align: center;
+    margin-top: 40px;
+    color: #a9a9a9;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.redes img {
+    width: 30px;
+    margin: 5px;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #e5f5ff;
+    color: #0a0a23;
+    background-image: none;
+  }
+  
+  /* Estilo para el menú y los enlaces dentro del menú en el modo claro */
+  .dark-mode .menu {
+    background-color: #caf0f8; /* Cambia el fondo del menú en modo claro */
+  }
+  
+  .dark-mode .menu li a {
+    color: #0a0a23; /* Cambia el color de los enlaces en modo claro */
+  }
+  
+  .dark-mode .menu li a:hover {
+    background-color: #0077b6; /* Cambia el fondo del enlace cuando se pasa el ratón en modo claro */
+    color: #caf0f8; /* Cambia el color del texto al pasar el ratón */
+  }
+  
+  
+  .dark-mode header,
+  .dark-mode footer {
+    background-color: #caf0f8;
+    color: #0a0a23;
+  }
+  body.dark-mode .tarjeta {
+    background-color: #caf0f8; /* Fondo blanco para las tarjetas */
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center;
+    transition: transform 0.3s ease;
+    max-width: 300px;
+    width: 100%;
+  }
+  .dark-mode h1,
+  .dark-mode .menu li a {
+    color: #0a0a23;
+  }
+  
+  .dark-mode button {
+    background-color: #0077b6;
+    color: #ffffff;
+  }
+  
+  /* Dark Mode Accent Elements */
+  .dark-mode .content {
+    background-color: #d9f1fc;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .dark-mode .menu li a:hover {
+    background-color: #005f87;
+  }
+  body.dark-mode #searchInput {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #0077b6;
+  }
+  
+  body.dark-mode button {
+    background-color: #48cae4;
+    color: #000000;
+  }

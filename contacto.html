@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto - ExpoTech 2025</title>
+  <link rel="stylesheet" href="Stylecontacto.css">
+</head>
+<body>
+
+  <header>
+    <h1 class="spanish-text">Contacto - ExpoTech 2025</h1>
+    <h1 class="english-text" style="display:none;">ExpoTech 2025 - Contact</h1>
+    <div class="container">
+        <nav>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <ul class="menu">
+                <li><a href="index.html" class="spanish-text">Inicio</a><a href="index.html" class="english-text" style="display:none;">Home</a></li>
+                <li><a href="actividades.html" class="spanish-text">Actividades</a><a href="actividades.html" class="english-text" style="display:none;">Activities</a></li>
+                <li><a href="expositores.html" class="spanish-text">Expositores</a><a href="expositores.html" class="english-text" style="display:none;">Exhibitors</a></li>
+                <li><a href="preguntasfrecuentes.html" class="spanish-text">Preguntas</a><a href="preguntasfrecuentes.html" class="english-text" style="display:none;">Questions</a></li>
+                <li><a href="registro.html" class="spanish-text">Registro</a><a href="registro.html" class="english-text" style="display:none;">Registration</a></li>
+                <li><a href="contacto.html" class="spanish-text">Contacto</a><a href="contacto.html" class="english-text" style="display:none;">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="toggle-btns">
+        <button id="lang-toggle" onclick="toggleLanguage()">ES/EN</button>
+        <button id="darkmode-toggle" onclick="toggleDarkMode()">🌙/☀️</button>
+      </div>
+
+      <div class="tarjeta">
+        <h2 class="spanish-text">Contáctanos</h2>
+        <h2 class="english-text" style="display:none;">Contact Us</h2>
+        <p class="spanish-text">¿Tienes dudas o sugerencias? ¡Escríbenos!</p>
+        <p class="english-text" style="display:none;">Do you have questions or suggestions? Write to us!</p>
+
+        <!-- Formulario de contacto -->
+        <form action="#" method="POST" class="contact-form">
+          <label class="spanish-text" for="nombre">Nombre:</label>
+          <label class="english-text" for="nombre" style="display:none;">Name:</label>
+          <input type="text" id="nombre" name="nombre" required>
+
+          <label class="spanish-text" for="correo">Correo Electrónico:</label>
+          <label class="english-text" for="correo" style="display:none;">Email:</label>
+          <input type="email" id="correo" name="correo" required>
+
+          <label class="spanish-text" for="asunto">Asunto:</label>
+          <label class="english-text" for="asunto" style="display:none;">Subject:</label>
+          <input type="text" id="asunto" name="asunto" required>
+
+          <label class="spanish-text" for="mensaje">Mensaje:</label>
+          <label class="english-text" for="mensaje" style="display:none;">Message:</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+          <!-- Mensaje de éxito -->
+          <div id="mensaje-exito" class="mensaje-exito">
+            <span class="spanish-text">✅ ¡Formulario enviado con éxito!</span>
+            <span class="english-text" style="display: none;">✅ Form submitted successfully!</span>
+          </div>
+
+          <button type="submit" class="spanish-text">Enviar</button>
+          <button type="submit" class="english-text" style="display:none;">Send</button>
+        </form>
+
+        <h2 class="spanish-text">Ubicación</h2>
+        <h2 class="english-text" style="display:none;">Location</h2>
+
+        <!-- Mapa Google Maps -->
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3332.1748515749746!2d-84.098706969722!3d9.970182962974949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e4d26a26e827%3A0xaab23a5179156d9c!2sColegio%20T%C3%A9cnico%20Profesional%20de%20Santo%20Domingo!5e1!3m2!1ses-419!2scr!4v1747359091898!5m2!1ses-419!2scr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <h2 class="spanish-text">Síguenos en redes sociales</h2>
+        <h2 class="english-text" style="display:none;">Follow us on social media</h2>
+        <p>
+          <a href="https://www.facebook.com/" target="_blank" class="spanish-text"><img src="img/facebook.png" alt=""></a><a href="#" target="_blank" class="english-text" style="display:none;">Facebook</a> ||
+          <a href="https://www.instagram.com/" target="_blank" class="spanish-text"><img src="img/instagram.png" alt=""></a><a href="#" target="_blank" class="english-text" style="display:none;">Instagram</a>
+        </p>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 ExpoTech | Todos los derechos reservados</p>
+    <div class="contact-info">
+        <p><strong class="spanish-text">Contacto:</strong><strong class="english-text" style="display:none;">Contact:</strong></p>
+        <p class="spanish-text">Teléfono: 📞 +1 234 567 890</p>
+        <p class="english-text" style="display:none;">Phone: 📞 +1 234 567 890</p>
+        <p class="spanish-text">Correo: 📧 contacto@expotech2025.com</p>
+        <p class="english-text" style="display:none;">Email: 📧 contacto@expotech2025.com</p>
+        <p class="spanish-text">WhatsApp: 💬 +1 234 567 890</p>
+        <p class="english-text" style="display:none;">WhatsApp: 💬 +1 234 567 890</p>
+    </div>
+  </footer>
+
+  <script src="ScriptContacto.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Actividades - ExpoTech 2025</title>
+  <link rel="stylesheet" href="StyleActividades.css" />
+</head>
+<body>
+  <header>
+    <h1 id="titulo-es" class="spanish-text">Actividades - ExpoTech 2025</h1>
+    <h1 id="titulo-en" class="english-text" style="display:none;">ExpoTech 2025 - Activities</h1>    
+    <div class="container">
+
+      <nav>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="actividades.html">Actividades</a></li>
+          <li><a href="expositores.html">Expositores</a></li>
+          <li><a href="preguntasfrecuentes.html">Preguntas</a></li>
+          <li><a href="registro.html">Registro</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="controles">
+      <input type="text" id="searchInput" placeholder="Buscar..." oninput="searchFunction()" />
+      <div class="toggle-btns">
+        <button id="lang-toggle">ES/EN</button>
+        <button id="darkmode-toggle" onclick="toggleDarkMode()">🌙/☀️</button>
+      </div>
+    </div>
+
+    <section class="actividades">
+
+      <!-- Tarjeta 1 -->
+      <div class="tarjeta">
+        <img src="img/Icono Presentación.png" alt="Presentación" />
+        <div class="spanish-text">
+          <h2>La IA en la Actualidad</h2>
+          <p><strong>Hora:</strong> 10:00 - 11:00</p>
+          <p><strong>Expositor:</strong> Ana López</p>
+          <p><strong>Ubicación:</strong> Stand A</p>
+        </div>
+        <div class="english-text" style="display:none">
+          <h2>AI in Today’s World</h2>
+          <p><strong>Time:</strong> 10:00 - 11:00</p>
+          <p><strong>Speaker:</strong> Ana López</p>
+          <p><strong>Location:</strong> Stand A</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="tarjeta">
+        <img src="img/Icono Engranaje.png" alt="Robótica" />
+        <div class="spanish-text">
+          <h2>Taller de Robótica</h2>
+          <p><strong>Hora:</strong> 11:30 - 13:00</p>
+          <p><strong>Expositor:</strong> Carlos Ruiz</p>
+          <p><strong>Ubicación:</strong> Stand B</p>
+        </div>
+        <div class="english-text" style="display:none">
+          <h2>Robotics Workshop</h2>
+          <p><strong>Time:</strong> 11:30 - 13:00</p>
+          <p><strong>Speaker:</strong> Carlos Ruiz</p>
+          <p><strong>Location:</strong> Stand B</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="tarjeta">
+        <img src="img/Icono Video Camara.png" alt="VR" />
+        <div class="spanish-text">
+          <h2>Realidad Virtual y Aumentada</h2>
+          <p><strong>Hora:</strong> 14:00 - 15:00</p>
+          <p><strong>Expositor:</strong> Laura Gómez</p>
+          <p><strong>Ubicación:</strong> Stand C</p>
+        </div>
+        <div class="english-text" style="display:none">
+          <h2>Virtual and Augmented Reality</h2>
+          <p><strong>Time:</strong> 14:00 - 15:00</p>
+          <p><strong>Speaker:</strong> Laura Gómez</p>
+          <p><strong>Location:</strong> Stand C</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 4 -->
+      <div class="tarjeta">
+        <img src="img/Icono Globo Terraqueo.png" alt="Sostenibilidad" />
+        <div class="spanish-text">
+          <h2>Tecnología Sostenible</h2>
+          <p><strong>Hora:</strong> 15:00 - 16:30</p>
+          <p><strong>Expositor:</strong> David Martínez</p>
+          <p><strong>Ubicación:</strong> Stand D</p>
+        </div>
+        <div class="english-text" style="display:none">
+          <h2>Sustainable Technology</h2>
+          <p><strong>Time:</strong> 15:00 - 16:30</p>
+          <p><strong>Speaker:</strong> David Martínez</p>
+          <p><strong>Location:</strong> Stand D</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 5 -->
+      <div class="tarjeta">
+        <img src="img/Icono Big Data.png" alt="Big Data" />
+        <div class="spanish-text">
+          <h2>Big Data y el Futuro Empresarial</h2>
+          <p><strong>Hora:</strong> 17:00 - 18:00</p>
+          <p><strong>Expositor:</strong> Mariana Fuentes</p>
+          <p><strong>Ubicación:</strong> Stand E</p>
+        </div>
+        <div class="english-text" style="display:none">
+          <h2>Big Data and Business Future</h2>
+          <p><strong>Time:</strong> 17:00 - 18:00</p>
+          <p><strong>Speaker:</strong> Mariana Fuentes</p>
+          <p><strong>Location:</strong> Stand E</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 6 -->
+      <div class="tarjeta">
+        <img src="img/Icono CiberSeguridad.png" alt="Ciberseguridad" />
+        <div class="spanish-text">
+          <h2>Ciberseguridad en 2025</h2>
+          <p><strong>Hora:</strong> 18:30 - 19:30</p>
+          <p><strong>Expositor:</strong> Sergio Aguilar</p>
+          <p><strong>Ubicación:</strong> Stand F</p>
+        </div>
+        <div class="english-text" style="display:none">
+          <h2>Cybersecurity in 2025</h2>
+          <p><strong>Time:</strong> 18:30 - 19:30</p>
+          <p><strong>Speaker:</strong> Sergio Aguilar</p>
+          <p><strong>Location:</strong> Stand F</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 7 -->
+      <div class="tarjeta">
+        <img src="img/Icono Dron.png" alt="Drones" />
+        <div class="spanish-text">
+          <h2>Innovaciones en Drones</h2>
+          <p><strong>Hora:</strong> 10:00 - 11:30</p>
+          <p><strong>Expositor:</strong> Paula Jiménez</p>
+          <p><strong>Ubicación:</strong> Stand G</p>
+        </div>
+        <div class="english-text" style="display:none">
+          <h2>Drone Innovations</h2>
+          <p><strong>Time:</strong> 10:00 - 11:30</p>
+          <p><strong>Speaker:</strong> Paula Jiménez</p>
+          <p><strong>Location:</strong> Stand G</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 8 -->
+      <div class="tarjeta">
+        <img src="img/Icono Inteligencia Artificial.png" alt="IA Creativa" />
+        <div class="spanish-text">
+          <h2>Creatividad e Inteligencia Artificial</h2>
+          <p><strong>Hora:</strong> 12:00 - 13:30</p>
+          <p><strong>Expositor:</strong> Tomás Herrera</p>
+          <p><strong>Ubicación:</strong> Stand H</p>
+        </div>
+        <div class="english-text" style="display:none">
+          <h2>Creativity and Artificial Intelligence</h2>
+          <p><strong>Time:</strong> 12:00 - 13:30</p>
+          <p><strong>Speaker:</strong> Tomás Herrera</p>
+          <p><strong>Location:</strong> Stand H</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 9 -->
+      <div class="tarjeta">
+        <img src="img/Icono Blockchain.png" alt="Blockchain" />
+        <div class="spanish-text">
+          <h2>Blockchain más allá de las Criptomonedas</h2>
+          <p><strong>Hora:</strong> 14:00 - 15:30</p>
+          <p><strong>Expositor:</strong> Isabel Rojas</p>
+          <p><strong>Ubicación:</strong> Stand I</p>
+        </div>
+        <div class="english-text" style="display:none">
+          <h2>Blockchain Beyond Cryptocurrency</h2>
+          <p><strong>Time:</strong> 14:00 - 15:30</p>
+          <p><strong>Speaker:</strong> Isabel Rojas</p>
+          <p><strong>Location:</strong> Stand I</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 10 -->
+      <div class="tarjeta">
+        <img src="img/Icono Energia Solar.png" alt="Energía Solar" />
+        <div class="spanish-text">
+          <h2>Tecnologías de Energía Solar</h2>
+          <p><strong>Hora:</strong> 16:00 - 17:30</p>
+          <p><strong>Expositor:</strong> Andrés Velázquez</p>
+          <p><strong>Ubicación:</strong> Stand J</p>
+        </div>
+        <div class="english-text" style="display:none">
+          <h2>Solar Energy Technologies</h2>
+          <p><strong>Time:</strong> 16:00 - 17:30</p>
+          <p><strong>Speaker:</strong> Andrés Velázquez</p>
+          <p><strong>Location:</strong> Stand J</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 ExpoTech | Todos los derechos reservados</p>
+    <div class="contact-info">
+        <p><strong>Contacto:</strong></p>
+        <p>Teléfono: <span class="icon-phone">📞</span> +1 234 567 890</p>
+        <p>Correo: <span class="icon-email">📧</span> contacto@expotech2025.com</p>
+        <p>WhatsApp: <span class="icon-whatsapp">💬</span> +1 234 567 890</p>
+    </div>
+</footer>
+
+  <script src="ScriptActividades.js"></script>
+  
+  <script>
+    function toggleMenu() {
+      document.querySelector('.menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
+
+
