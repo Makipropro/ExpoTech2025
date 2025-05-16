@@ -1,41 +1,43 @@
-        // Función para cambiar el idioma
-        document.getElementById("lang-toggle").onclick = function() {
-            var spanishElements = document.querySelectorAll('.spanish-text');
-            var englishElements = document.querySelectorAll('.english-text');
-            
-            spanishElements.forEach(function(element) {
-                element.style.display = element.style.display === 'none' ? 'block' : 'none';
-            });
+// Función para cambiar el idioma
+function toggleLanguage() {
+  const spanishElements = document.querySelectorAll(".spanish-text");
+  const englishElements = document.querySelectorAll(".english-text");
 
-            englishElements.forEach(function(element) {
-                element.style.display = element.style.display === 'none' ? 'block' : 'none';
-            });
-        };
+  const isSpanishVisible = Array.from(spanishElements).some(el => {
+    return window.getComputedStyle(el).display !== "none";
+  });
 
-        // Función para el modo oscuro
-        document.getElementById("darkmode-toggle").onclick = function() {
-            document.body.classList.toggle('dark-mode');
-        };
+  if (isSpanishVisible) {
+    spanishElements.forEach(el => el.style.display = "none");
+    englishElements.forEach(el => el.style.display = "block");
+  } else {
+    spanishElements.forEach(el => el.style.display = "block");
+    englishElements.forEach(el => el.style.display = "none");
+  }
+}
 
-        // Función para mostrar/ocultar el menú en dispositivos móviles
-        function toggleMenu() {
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('active');
-        }
-        function searchFunction() {
-            var input = document.getElementById("searchInput").value.toLowerCase();
-            var tarjetas = document.querySelectorAll(".tarjeta");
 
-            tarjetas.forEach(function(tarjeta) {
-                var nombre = tarjeta.querySelector("h2").textContent.toLowerCase();
-                var descripcion = tarjeta.querySelector("p:nth-of-type(2)").textContent.toLowerCase();
+// Modo oscuro/claro
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
 
-                if (nombre.includes(input) || descripcion.includes(input)) {
-                    tarjeta.style.display = "block";
-                } else {
-                    tarjeta.style.display = "none";
-                }
-            });
-        }
+// Acordeón
+function toggleAccordion(element) {
+    const parentItem = element.parentElement;
+    const bodies = parentItem.querySelectorAll('.accordion-body');
+
+    // Oculta todos los cuerpos dentro del acordeón actual
+    bodies.forEach(body => {
+        body.style.display = (body.style.display === 'block') ? 'none' : 'block';
+    });
+}
+
+// Menú responsive
+function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('show');
+}
+
 
 
