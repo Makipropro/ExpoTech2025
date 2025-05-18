@@ -214,7 +214,56 @@ button:hover {
   background-color: #0077b6;
   color: #ffffff;
 }
+/* Overlay y bloqueo scroll cuando menú está abierto - modo oscuro (actual) */
+body.menu-open {
+    overflow: hidden; /* Bloquea scroll de fondo */
+    position: relative;
+}
 
+body.menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5); /* overlay semitransparente */
+    z-index: 998; /* Por debajo del menú pero encima del contenido */
+    pointer-events: auto; /* Captura clics y bloquea interacción */
+}
 
+/* El menú debe tener un z-index mayor para estar sobre el overlay */
+.menu.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #14213d;
+    z-index: 999; /* más alto que el overlay */
+    overflow-y: auto;
+}
 
-  
+/* ======== ESTILOS PARA MODO CLARO (dark-mode) ======== */
+
+/* Cambiar overlay para modo claro */
+body.dark-mode.menu-open::before {
+    background: rgba(255, 255, 255, 0.5); /* overlay claro semitransparente */
+}
+
+/* Cambiar color de fondo del menú activo en modo claro */
+body.dark-mode .menu.active {
+    background-color: #caf0f8; /* fondo claro para el menú */
+    color: #0a0a23; /* texto oscuro */
+}
+
+/* Cambiar color de enlaces del menú en modo claro */
+body.dark-mode .menu.active li a {
+    color: #0a0a23;
+}
+
+/* Hover para los enlaces del menú en modo claro */
+body.dark-mode .menu.active li a:hover {
+    background-color: #0077b6;
+    color: #caf0f8;
+}

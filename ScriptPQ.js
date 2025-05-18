@@ -56,11 +56,27 @@ function toggleAccordion(headerElement) {
     });
 }
 
-
-
-
 // Menú responsive
 function toggleMenu() {
-  const menu = document.querySelector('.menu');
-  menu.classList.toggle('active');
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
+
+    if (menu.classList.contains('active')) {
+        document.body.classList.add('menu-open');
+    } else {
+        document.body.classList.remove('menu-open');
+    }
 }
+//Cerrar Menu al tocar body
+document.body.addEventListener('click', (e) => {
+    const menu = document.querySelector('.menu');
+    const menuButton = document.querySelector('.menu-icon'); // botón que abre el menú
+
+    if (document.body.classList.contains('menu-open')) {
+        // Si clickeas fuera del menú y fuera del botón
+        if (!menu.contains(e.target) && e.target !== menu && e.target !== menuButton) {
+            menu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+    }
+});

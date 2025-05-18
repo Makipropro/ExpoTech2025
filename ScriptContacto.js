@@ -18,10 +18,17 @@ document.getElementById("lang-toggle").onclick = function() {
   };
   
   // Función para mostrar/ocultar el menú en dispositivos móviles
-  function toggleMenu() {
+function toggleMenu() {
     const menu = document.querySelector('.menu');
     menu.classList.toggle('active');
-  }
+
+    if (menu.classList.contains('active')) {
+        document.body.classList.add('menu-open');
+    } else {
+        document.body.classList.remove('menu-open');
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contact-form");
   const mensajeExito = document.getElementById("mensaje-exito");
@@ -44,4 +51,16 @@ document.addEventListener("DOMContentLoaded", () => {
     form.reset();
   });
 });
+//Cerrar Menu al tocar body
+document.body.addEventListener('click', (e) => {
+    const menu = document.querySelector('.menu');
+    const menuButton = document.querySelector('.menu-icon'); // botón que abre el menú
 
+    if (document.body.classList.contains('menu-open')) {
+        // Si clickeas fuera del menú y fuera del botón
+        if (!menu.contains(e.target) && e.target !== menu && e.target !== menuButton) {
+            menu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+    }
+});

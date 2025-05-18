@@ -1,6 +1,21 @@
 function toggleMenu() {
-  document.querySelector('.menu').classList.toggle('active');
+  const menu = document.querySelector('.menu');
+  menu.classList.toggle('active');
+  document.body.classList.toggle('menu-open');
 }
+document.body.addEventListener('click', (e) => {
+  const menu = document.querySelector('.menu');
+  const menuButton = document.querySelector('.menu-icon');
+
+  if (document.body.classList.contains('menu-open')) {
+    // Si el clic NO es dentro del menú y NO es en el botón
+    if (!menu.contains(e.target) && e.target !== menuButton) {
+      menu.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    }
+  }
+});
+
 
 function toggleLanguage() {
   const spanishTexts = document.querySelectorAll('.spanish-text');
