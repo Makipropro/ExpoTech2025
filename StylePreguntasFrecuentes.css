@@ -214,6 +214,10 @@ button:hover {
   background-color: #0077b6;
   color: #ffffff;
 }
+  body.dark-mode button {
+    background-color: #48cae4;
+    color: #000000;
+  }
 /* Overlay y bloqueo scroll cuando menú está abierto - modo oscuro (actual) */
 body.menu-open {
     overflow: hidden; /* Bloquea scroll de fondo */

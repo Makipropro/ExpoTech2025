@@ -3,6 +3,7 @@ function toggleMenu() {
   menu.classList.toggle('active');
   document.body.classList.toggle('menu-open');
 }
+
 document.body.addEventListener('click', (e) => {
   const menu = document.querySelector('.menu');
   const menuButton = document.querySelector('.menu-icon');
@@ -16,30 +17,59 @@ document.body.addEventListener('click', (e) => {
   }
 });
 
-
-function toggleLanguage() {
+function aplicarIdioma(idioma) {
   const spanishTexts = document.querySelectorAll('.spanish-text');
   const englishTexts = document.querySelectorAll('.english-text');
 
-  spanishTexts.forEach(el => el.style.display = el.style.display === 'none' ? '' : 'none');
-  englishTexts.forEach(el => el.style.display = el.style.display === 'none' ? '' : 'none');
+  if (idioma === 'es') {
+    spanishTexts.forEach(el => el.style.display = 'block');
+    englishTexts.forEach(el => el.style.display = 'none');
+  } else {
+    spanishTexts.forEach(el => el.style.display = 'none');
+    englishTexts.forEach(el => el.style.display = 'block');
+  }
+
+  localStorage.setItem('idioma', idioma);
+}
+
+function toggleLanguage() {
+  const idiomaActual = localStorage.getItem('idioma') || 'es';
+  const nuevoIdioma = idiomaActual === 'es' ? 'en' : 'es';
+  aplicarIdioma(nuevoIdioma);
 }
 
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
+
+  if (document.body.classList.contains('dark-mode')) {
+    localStorage.setItem('modo', 'dark');
+  } else {
+    localStorage.setItem('modo', 'light');
+  }
 }
 
 document.getElementById("lang-toggle").onclick = toggleLanguage;
 document.getElementById("darkmode-toggle").onclick = toggleDarkMode;
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Aplicar modo guardado
+  const modoGuardado = localStorage.getItem('modo');
+  if (modoGuardado === 'dark') {
+    document.body.classList.add('dark-mode');
+  } else {
+    document.body.classList.remove('dark-mode');
+  }
+
+  // Aplicar idioma guardado
+  const idiomaGuardado = localStorage.getItem('idioma') || 'es';
+  aplicarIdioma(idiomaGuardado);
+
+  // Formulario y validaciones
   const form = document.getElementById('registroForm');
   const mensajeExito = document.getElementById('mensajeExito');
   const errorIntereses = document.getElementById('errorIntereses');
-
   const interesesCheckboxes = form.querySelectorAll('input[name="intereses"]');
 
-  // Ocultar mensaje de error cuando se seleccione al menos uno
   interesesCheckboxes.forEach(checkbox => {
     checkbox.addEventListener('change', () => {
       const algunoSeleccionado = [...interesesCheckboxes].some(cb => cb.checked);
@@ -50,15 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   form.addEventListener('submit', (e) => {
-    // Primero dejamos que el navegador valide los campos required y email nativos
     if (!form.checkValidity()) {
-      // Dejar que el navegador muestre sus mensajes nativos
       form.reportValidity();
-      e.preventDefault(); // evitar submit si no válido
+      e.preventDefault();
       return;
     }
 
-    // Validar checkboxes manualmente
     const intereses = form.querySelectorAll('input[name="intereses"]:checked');
     if (intereses.length === 0) {
       e.preventDefault();
@@ -68,9 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
       errorIntereses.style.display = 'none';
     }
 
-    // Si pasa todas las validaciones mostramos mensaje de éxito y limpiamos
-    e.preventDefault(); // evitar que recargue la página
-
+    e.preventDefault();
     mensajeExito.style.display = 'block';
     form.reset();
 
@@ -79,4 +104,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5000);
   });
 });
-
